@@ -19,7 +19,7 @@ public class Main {
         commands.put("/rand", glossary ->
                 out.println(glossary.getRandomEntry()));
         commands.put("/keys", glossary ->
-                glossary.printAllKeys(out);
+                glossary.printAllKeys(out)
         );
         commands.put("/help", glossary ->
                 out.println("All commands: " + commands.keySet()));

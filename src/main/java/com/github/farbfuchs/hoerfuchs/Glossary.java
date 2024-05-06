@@ -11,10 +11,10 @@ import static java.util.stream.Collectors.toMap;
 public class Glossary {
 
     private final Random random = new Random();
-    private final Map<String, GlossaryEntry> map;
+    private Map<String, GlossaryEntry> map = null;
 
     public Glossary(Stream<GlossaryEntry> entryStream) {
-        map = entryStream.collect(toMap(GlossaryEntry::getNormalizedKey(), Function.identity()));
+        map = entryStream.collect(toMap(GlossaryEntry::getNormalizedKey, Function.identity()));
     }
 
     public GlossaryEntry getRandomEntry() {
